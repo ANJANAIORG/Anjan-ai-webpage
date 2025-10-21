@@ -40,7 +40,7 @@ function Navbar() {
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 48px',
-          height: scrolled ? 64 : 80,
+          height: scrolled ? 64 : 70,
           transition: 'height 0.3s ease',
         }}
       >
@@ -50,7 +50,7 @@ function Navbar() {
             src={logo}
             alt="Anjan AI Logo"
             style={{
-              height: scrolled ? 80 : 80,
+              height: scrolled ? 60 : 60,
               transition: 'height 0.3s ease',
             }}
           />
