@@ -1,0 +1,11 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Reset demo styles and provide utility wrappers for sections */
+.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.grow { flex: 1 1 auto; }
+
