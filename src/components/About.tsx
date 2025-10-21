@@ -14,7 +14,7 @@ const pointVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6 },
   },
 };
 
@@ -165,7 +165,7 @@ function About() {
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
           style={{
             flex: "1 1 400px",
             display: "flex",

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 type Card = { title: string; points: string[] };
 
 const SOLUTIONS: Card[] = [

@@ -4,14 +4,15 @@ import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
 
 function Hero() {
-  const vantaRef = useRef(null);
-  const vantaEffect = useRef(null);
+  const vantaRef = useRef<HTMLElement>(null);
+  const vantaEffect = useRef<any>(null);
 
   useEffect(() => {
     // Initialize Vanta.js NET background
-    vantaEffect.current = NET({
-      el: vantaRef.current,
-      THREE,
+    if (vantaRef.current) {
+      vantaEffect.current = NET({
+        el: vantaRef.current,
+        THREE,
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -25,7 +26,8 @@ function Hero() {
       maxDistance: 22.0,
       spacing: 14.0,
       showDots: true,
-    });
+      });
+    }
 
     // Cleanup on unmount
     return () => {
