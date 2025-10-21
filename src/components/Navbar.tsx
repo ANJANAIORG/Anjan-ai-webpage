@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FaHome, FaInfoCircle, FaBoxOpen, FaEnvelope } from 'react-icons/fa'
+import logo from '../assets/image001.png' // <- Import your logo here
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -44,19 +45,15 @@ function Navbar() {
         }}
       >
         {/* Logo */}
-        <a
-          href="#home"
-          style={{
-            fontSize: scrolled ? 24 : 28,
-            fontWeight: 800,
-            textDecoration: 'none',
-            background: 'linear-gradient(90deg, #4338ca, #2563eb)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            transition: 'font-size 0.3s ease',
-          }}
-        >
-          Anjan AI
+        <a href="#home" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src={logo}
+            alt="Anjan AI Logo"
+            style={{
+              height: scrolled ? 80 : 80,
+              transition: 'height 0.3s ease',
+            }}
+          />
         </a>
 
         {/* Desktop Navigation */}
