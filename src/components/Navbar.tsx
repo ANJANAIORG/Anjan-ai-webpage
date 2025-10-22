@@ -134,7 +134,7 @@ function Navbar() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 10,
-                fontSize: 16, // 👈 Decreased from 18 to 16
+                fontSize: 10, // 👈 Decreased from 18 to 16
                 color: '#1e3a8a',
                 textDecoration: 'none',
                 fontWeight: 600,
