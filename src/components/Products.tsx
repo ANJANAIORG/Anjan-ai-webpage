@@ -43,7 +43,7 @@ export default function Products() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "80px 24px",
+        padding: "60px 16px", // Reduced padding
         position: "relative",
         overflow: "hidden",
       }}
@@ -63,28 +63,28 @@ export default function Products() {
       <div
         style={{
           textAlign: "center",
-          maxWidth: 1200,
-          margin: "0 auto 40px auto",
+          maxWidth: 1000,
+          margin: "0 auto 24px auto", // Decreased gap to cards
           position: "relative",
           zIndex: 1,
         }}
       >
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 36px)",
+            fontSize: "clamp(22px, 3vw, 32px)",
             fontWeight: 700,
             color: "#1e3a8a",
-            marginBottom: 8,
+            marginBottom: 6,
           }}
         >
           Products and Services
         </h2>
         <h3
           style={{
-            fontSize: "clamp(16px, 2.5vw, 20px)",
+            fontSize: "clamp(14px, 2vw, 18px)",
             color: "#2563eb",
             fontWeight: 600,
-            marginBottom: 16,
+            marginBottom: 12, // Decreased gap
           }}
         >
           Empowering Businesses with Scalable AI & ERP Solutions
@@ -95,10 +95,10 @@ export default function Products() {
       <div
         style={{
           display: "flex",
-          gap: "24px",
+          gap: "16px", // Reduced gap between cards
           overflowX: "auto",
           scrollBehavior: "smooth",
-          padding: "12px 0",
+          padding: "8px 0",
           position: "relative",
           zIndex: 1,
           msOverflowStyle: "none",
@@ -120,13 +120,13 @@ export default function Products() {
             <div
               key={card.title}
               style={{
-                flex: "0 0 350px",
-                minHeight: 350,
+                flex: "0 0 300px", // Smaller width
+                minHeight: 300,     // Smaller height
                 background: backgroundStyle,
                 color,
-                borderRadius: 20,
-                boxShadow: "0 0 20px rgba(37,99,235,0.15), 0 6px 16px rgba(37,99,235,0.1)",
-                padding: 24,
+                borderRadius: 18,
+                boxShadow: "0 0 18px rgba(37,99,235,0.15), 0 5px 14px rgba(37,99,235,0.1)",
+                padding: 20,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -139,8 +139,8 @@ export default function Products() {
             >
               <h3
                 style={{
-                  marginBottom: 12,
-                  fontSize: "1.3rem",
+                  marginBottom: 10,
+                  fontSize: "1.1rem",
                   fontWeight: 700,
                   color,
                 }}
@@ -149,8 +149,8 @@ export default function Products() {
               </h3>
               <p
                 style={{
-                  fontSize: "0.95rem",
-                  lineHeight: 1.6,
+                  fontSize: "0.85rem",
+                  lineHeight: 1.5,
                   color: index < 5 ? "rgba(255,255,255,0.9)" : "#111827",
                 }}
               >
