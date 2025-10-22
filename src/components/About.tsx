@@ -49,8 +49,7 @@ function About() {
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.5))",
+          background:0xe0f2fe,
           backdropFilter: "blur(6px)",
           zIndex: 0,
         }}

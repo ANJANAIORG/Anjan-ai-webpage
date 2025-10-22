@@ -1,0 +1,95 @@
+/* Products.css */
+.products-container {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 100%;
+  margin-top: -50px;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background: none;
+  border: none;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.293 0L3.818 1.483l.043.043L5.2 3H0v2h5.2l-.043.043L3.818 6.517 5.293 8l1.483-1.483L8 5.2V3.8l-1.224-1.224L5.293 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.707 0l1.483 1.483-.043.043L2.8 3h5.2v2H2.8l.043.043L4.267 6.517 2.782 8l-1.483-1.483L0 5.2V3.8l1.224-1.224L2.707 0z'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    right: 10%;
+    left: 10%;
+  }
+}
