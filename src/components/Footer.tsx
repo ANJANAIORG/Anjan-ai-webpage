@@ -1,5 +1,3 @@
-import React from "react";// adjust the path based on your folder structure
-
 function Footer() {
   return (
     <footer
