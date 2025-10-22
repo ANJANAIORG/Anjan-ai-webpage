@@ -45,7 +45,7 @@ function Hero() {
           transition={{ duration: 1 }}
         >
           <h1 id="hero-title">
-            Transforming Businesses With Intelligent AI Solutions
+            Transforming Businesses With <br /> Intelligent AI Solutions
           </h1>
 
           <motion.p
