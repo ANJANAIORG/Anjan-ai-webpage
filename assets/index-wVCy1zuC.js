@@ -3932,7 +3932,7 @@ void main() {
         }
 
         .hero-content h1 {
-          font-size: clamp(32px, 4vw, 52px); /* 🔹 Reduced size */
+          font-size: clamp(40px, 4vw, 65px); /* 🔹 Reduced size */
           font-weight: 800;
           line-height: 1.15;
           margin: 0;
