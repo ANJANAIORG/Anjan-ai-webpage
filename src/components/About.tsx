@@ -27,25 +27,25 @@ function About() {
     <section
       id="about"
       style={{
-        padding: "100px 0",
+        padding: "60px 0",
         background: "linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Soft Background Overlay */}
+      {/* Background Overlay */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
             "linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.5))",
-          backdropFilter: "blur(8px)",
+          backdropFilter: "blur(6px)",
           zIndex: 0,
         }}
       />
 
-      {/* ===================== Main Content ===================== */}
+      {/* Main Content */}
       <div
         style={{
           position: "relative",
@@ -56,27 +56,27 @@ function About() {
           justifyContent: "space-between",
           flexWrap: "wrap",
           gap: "60px",
-          maxWidth: "1200px",
+          maxWidth: "1150px",
           margin: "0 auto",
-          padding: "0 40px",
+          padding: "0 24px",
         }}
       >
-        {/* ===================== Left Side: About Text ===================== */}
+        {/* Left Side: About Text */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           style={{
-            flex: "1 1 550px",
+            flex: "1 1 480px",
             textAlign: "left",
           }}
         >
           <h2
             style={{
-              fontSize: "clamp(32px, 5vw, 52px)",
-              fontWeight: "800",
+              fontSize: "clamp(22px, 3vw, 32px)",
+              fontWeight: "700",
               color: "#1e3a8a",
-              marginBottom: "16px",
+              marginBottom: "8px",
             }}
           >
             About Us
@@ -84,9 +84,9 @@ function About() {
 
           <h3
             style={{
-              fontSize: "clamp(22px, 4vw, 30px)",
+              fontSize: "clamp(16px, 2.5vw, 20px)",
               color: "#2563eb",
-              marginBottom: "24px",
+              marginBottom: "12px",
               fontWeight: "600",
             }}
           >
@@ -95,11 +95,11 @@ function About() {
 
           <p
             style={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
+              fontSize: "0.85rem",
+              lineHeight: 1.5,
               color: "#111827",
-              marginBottom: "48px",
-              maxWidth: "85%",
+              marginBottom: "24px",
+              maxWidth: "90%",
             }}
           >
             Anjan AI specializes in crafting custom AI agents and ERP+AI systems
@@ -116,8 +116,8 @@ function About() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "18px",
-              marginTop: "24px",
+              gap: "10px",
+              marginTop: "10px",
             }}
           >
             {points.map((point, index) => (
@@ -126,67 +126,65 @@ function About() {
                 variants={pointVariants}
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: "0 6px 20px rgba(37,99,235,0.15)",
+                  boxShadow: "0 3px 10px rgba(37,99,235,0.12)",
                 }}
                 transition={{ type: "spring", stiffness: 150 }}
                 style={{
-                  backgroundColor: "#fff",
-                  padding: "16px 20px",
-                  borderRadius: "16px",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
                   color: "#111827",
-                  fontSize: "1rem",
+                  fontSize: "0.85rem",
                   fontWeight: "500",
                   display: "flex",
                   alignItems: "center",
-                  gap: "12px",
-                  maxWidth: "750px",
+                  gap: "8px",
+                  maxWidth: "700px",
                 }}
               >
+                {/* Subtle modern dot */}
                 <span
                   style={{
-                    fontSize: "1.4rem",
-                    color: "#1e3a8a",
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "50%",
+                    backgroundColor: "#2563eb",
+                    display: "inline-block",
                   }}
-                >
-                  ✔️
-                </span>
+                />
                 {point}
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* ===================== Right Side: Mission & Vision ===================== */}
+        {/* Right Side: Mission & Vision */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           style={{
-            flex: "1 1 420px",
+            flex: "1 1 340px",
             display: "flex",
             flexDirection: "column",
-            gap: "40px",
-            marginTop: "30px",
+            gap: "20px",
+            marginTop: "16px",
           }}
         >
           {[
             {
               title: "Our Mission",
-              text: "To revolutionize business operations through intelligent automation, enabling organizations to make data-driven decisions with confidence and efficiency.",
+              text: "To revolutionize business operations through intelligent automation, enabling organizations to make data-driven decisions efficiently.",
             },
             {
               title: "Our Vision",
-              text: "To become a global leader in AI-driven innovation, creating scalable, ethical, and accessible solutions that transform the way businesses grow and operate.",
+              text: "To become a global leader in AI-driven innovation, creating scalable, ethical, and accessible solutions that redefine growth.",
             },
           ].map((card, index) => (
             <motion.div
               key={index}
               animate={{
                 boxShadow: [
-                  "0 0 25px rgba(37,99,235,0.4)",
-                  "0 0 40px rgba(37,99,235,0.6)",
-                  "0 0 25px rgba(37,99,235,0.4)",
+                  "0 0 12px rgba(37,99,235,0.4)",
+                  "0 0 20px rgba(37,99,235,0.5)",
+                  "0 0 12px rgba(37,99,235,0.4)",
                 ],
               }}
               transition={{
@@ -195,34 +193,34 @@ function About() {
                 ease: "easeInOut",
               }}
               whileHover={{
-                scale: 1.05,
+                scale: 1.03,
                 boxShadow:
-                  "0 0 45px rgba(37,99,235,0.8), 0 0 80px rgba(37,99,235,0.4)",
+                  "0 0 25px rgba(37,99,235,0.6), 0 0 45px rgba(37,99,235,0.3)",
               }}
               style={{
-                background: "linear-gradient(145deg, #ffffff, #f0f9ff)",
-                padding: "40px 30px",
-                borderRadius: "20px",
+                background: "transparent",
+                padding: "20px 18px",
+                borderRadius: "12px",
                 textAlign: "center",
                 color: "#1f2937",
                 border: "1px solid rgba(37,99,235,0.2)",
-                transition: "all 0.4s ease-in-out",
+                transition: "all 0.3s ease-in-out",
               }}
             >
               <h3
                 style={{
                   color: "#1e3a8a",
-                  fontSize: "1.8rem",
+                  fontSize: "1.2rem",
                   fontWeight: "700",
-                  marginBottom: "20px",
+                  marginBottom: "8px",
                 }}
               >
                 {card.title}
               </h3>
               <p
                 style={{
-                  fontSize: "1.05rem",
-                  lineHeight: "1.7",
+                  fontSize: "0.85rem",
+                  lineHeight: "1.4",
                 }}
               >
                 {card.text}

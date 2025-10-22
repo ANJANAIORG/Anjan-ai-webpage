@@ -17,13 +17,16 @@
   position: relative;
   z-index: 1;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+  margin-left: 0;            /* shift container fully to the left */
+  margin-right: auto;
+  padding: 0 20px;           /* reduce side padding */
   display: flex;
-  gap: 60px;
+  gap: 40px;                 /* tighter spacing between text and cards */
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: flex-start; /* ensure content hugs the left edge */
 }
+
 
 .about-left,
 .about-right {
