@@ -74,10 +74,10 @@ function Navbar() {
                 alignItems: 'center',
                 gap: 8,
                 color: '#1e3a8a',
-                fontSize: 17,
+                fontSize: 15, // 👈 Decreased from 17 to 15
                 fontWeight: 600,
                 textDecoration: 'none',
-                padding: '10px 16px',
+                padding: '8px 14px', // slightly smaller padding
                 borderRadius: 10,
                 transition: 'all 0.3s ease',
               }}
@@ -134,11 +134,11 @@ function Navbar() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 10,
-                fontSize: 18,
+                fontSize: 16, // 👈 Decreased from 18 to 16
                 color: '#1e3a8a',
                 textDecoration: 'none',
                 fontWeight: 600,
-                padding: '10px 16px',
+                padding: '8px 14px',
                 borderRadius: 8,
                 transition: 'all 0.3s ease',
               }}
