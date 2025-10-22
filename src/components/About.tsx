@@ -23,11 +23,22 @@ function About() {
     "Computer Vision & IoT Solutions for Seamless Digital Transformation",
   ];
 
+  const cards = [
+    {
+      title: "Our Mission",
+      text: "To revolutionize business operations through intelligent automation, enabling organizations to make data-driven decisions efficiently.",
+    },
+    {
+      title: "Our Vision",
+      text: "To become a global leader in AI-driven innovation, creating scalable, ethical, and accessible solutions that redefine growth.",
+    },
+  ];
+
   return (
     <section
       id="about"
       style={{
-        padding: "60px 0",
+        padding: "80px 0",
         background: "linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%)",
         position: "relative",
         overflow: "hidden",
@@ -73,10 +84,10 @@ function About() {
         >
           <h2
             style={{
-              fontSize: "clamp(22px, 3vw, 32px)",
+              fontSize: "clamp(26px, 4vw, 38px)",
               fontWeight: "700",
               color: "#1e3a8a",
-              marginBottom: "8px",
+              marginBottom: "12px",
             }}
           >
             About Us
@@ -84,9 +95,9 @@ function About() {
 
           <h3
             style={{
-              fontSize: "clamp(16px, 2.5vw, 20px)",
+              fontSize: "clamp(18px, 3vw, 24px)",
               color: "#2563eb",
-              marginBottom: "12px",
+              marginBottom: "16px",
               fontWeight: "600",
             }}
           >
@@ -95,10 +106,10 @@ function About() {
 
           <p
             style={{
-              fontSize: "0.85rem",
-              lineHeight: 1.5,
+              fontSize: "1rem",
+              lineHeight: 1.7,
               color: "#111827",
-              marginBottom: "24px",
+              marginBottom: "28px",
               maxWidth: "90%",
             }}
           >
@@ -116,7 +127,7 @@ function About() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "10px",
+              gap: "12px",
               marginTop: "10px",
             }}
           >
@@ -131,19 +142,18 @@ function About() {
                 transition={{ type: "spring", stiffness: 150 }}
                 style={{
                   color: "#111827",
-                  fontSize: "0.85rem",
+                  fontSize: "0.95rem",
                   fontWeight: "500",
                   display: "flex",
                   alignItems: "center",
-                  gap: "8px",
+                  gap: "10px",
                   maxWidth: "700px",
                 }}
               >
-                {/* Subtle modern dot */}
                 <span
                   style={{
-                    width: "8px",
-                    height: "8px",
+                    width: "10px",
+                    height: "10px",
                     borderRadius: "50%",
                     backgroundColor: "#2563eb",
                     display: "inline-block",
@@ -164,27 +174,18 @@ function About() {
             flex: "1 1 340px",
             display: "flex",
             flexDirection: "column",
-            gap: "20px",
+            gap: "24px",
             marginTop: "16px",
           }}
         >
-          {[
-            {
-              title: "Our Mission",
-              text: "To revolutionize business operations through intelligent automation, enabling organizations to make data-driven decisions efficiently.",
-            },
-            {
-              title: "Our Vision",
-              text: "To become a global leader in AI-driven innovation, creating scalable, ethical, and accessible solutions that redefine growth.",
-            },
-          ].map((card, index) => (
+          {cards.map((card, index) => (
             <motion.div
               key={index}
               animate={{
                 boxShadow: [
-                  "0 0 12px rgba(37,99,235,0.4)",
-                  "0 0 20px rgba(37,99,235,0.5)",
-                  "0 0 12px rgba(37,99,235,0.4)",
+                  "0 0 14px rgba(37,99,235,0.4)",
+                  "0 0 24px rgba(37,99,235,0.5)",
+                  "0 0 14px rgba(37,99,235,0.4)",
                 ],
               }}
               transition={{
@@ -193,34 +194,34 @@ function About() {
                 ease: "easeInOut",
               }}
               whileHover={{
-                scale: 1.03,
+                scale: 1.04,
                 boxShadow:
-                  "0 0 25px rgba(37,99,235,0.6), 0 0 45px rgba(37,99,235,0.3)",
+                  "0 0 28px rgba(37,99,235,0.6), 0 0 50px rgba(37,99,235,0.3)",
               }}
               style={{
                 background: "transparent",
-                padding: "20px 18px",
-                borderRadius: "12px",
+                padding: "24px 20px",
+                borderRadius: "14px",
                 textAlign: "center",
                 color: "#1f2937",
-                border: "1px solid rgba(37,99,235,0.2)",
+                border: "1px solid rgba(37,99,235,0.25)",
                 transition: "all 0.3s ease-in-out",
               }}
             >
               <h3
                 style={{
                   color: "#1e3a8a",
-                  fontSize: "1.2rem",
+                  fontSize: "1.4rem",
                   fontWeight: "700",
-                  marginBottom: "8px",
+                  marginBottom: "10px",
                 }}
               >
                 {card.title}
               </h3>
               <p
                 style={{
-                  fontSize: "0.85rem",
-                  lineHeight: "1.4",
+                  fontSize: "1rem",
+                  lineHeight: 1.6,
                 }}
               >
                 {card.text}
