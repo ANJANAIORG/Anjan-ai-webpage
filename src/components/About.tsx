@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import aiImage from "../assets/ai_image.png"; // Adjust the path if needed
 
-// Animation variants
 const containerVariants = {
   hidden: {},
   visible: {
@@ -30,47 +28,46 @@ function About() {
       id="about"
       style={{
         padding: "100px 0",
-        backgroundColor: "#e0f2fe", // Light sky blue background
+        background: "linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Overlay */}
+      {/* Soft Background Overlay */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.5))",
+            "linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.5))",
           backdropFilter: "blur(8px)",
           zIndex: 0,
         }}
       />
 
-      {/* Main Content */}
+      {/* ===================== Main Content ===================== */}
       <div
-        className="container"
         style={{
           position: "relative",
           zIndex: 1,
           display: "flex",
-          flexDirection: "row", // Ensures text left, image right
-          alignItems: "center",
+          flexDirection: "row",
+          alignItems: "flex-start",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          gap: "40px",
+          gap: "60px",
           maxWidth: "1200px",
           margin: "0 auto",
           padding: "0 40px",
         }}
       >
-        {/* ===================== Left Side: Text ===================== */}
+        {/* ===================== Left Side: About Text ===================== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           style={{
-            flex: "1 1 500px",
+            flex: "1 1 550px",
             textAlign: "left",
           }}
         >
@@ -80,7 +77,6 @@ function About() {
               fontWeight: "800",
               color: "#1e3a8a",
               marginBottom: "16px",
-              letterSpacing: "-0.5px",
             }}
           >
             About Us
@@ -130,7 +126,7 @@ function About() {
                 variants={pointVariants}
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
+                  boxShadow: "0 6px 20px rgba(37,99,235,0.15)",
                 }}
                 transition={{ type: "spring", stiffness: 150 }}
                 style={{
@@ -161,27 +157,78 @@ function About() {
           </motion.div>
         </motion.div>
 
-        {/* ===================== Right Side: Image ===================== */}
+        {/* ===================== Right Side: Mission & Vision ===================== */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           style={{
-            flex: "1 1 400px",
+            flex: "1 1 420px",
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            gap: "40px",
+            marginTop: "30px",
           }}
         >
-          <img
-            src={aiImage}
-            alt="AI Illustration"
-            style={{
-              width: "100%",
-              maxWidth: "500px",
-              borderRadius: "20px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
-            }}
-          />
+          {[
+            {
+              title: "Our Mission",
+              text: "To revolutionize business operations through intelligent automation, enabling organizations to make data-driven decisions with confidence and efficiency.",
+            },
+            {
+              title: "Our Vision",
+              text: "To become a global leader in AI-driven innovation, creating scalable, ethical, and accessible solutions that transform the way businesses grow and operate.",
+            },
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              animate={{
+                boxShadow: [
+                  "0 0 25px rgba(37,99,235,0.4)",
+                  "0 0 40px rgba(37,99,235,0.6)",
+                  "0 0 25px rgba(37,99,235,0.4)",
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow:
+                  "0 0 45px rgba(37,99,235,0.8), 0 0 80px rgba(37,99,235,0.4)",
+              }}
+              style={{
+                background: "linear-gradient(145deg, #ffffff, #f0f9ff)",
+                padding: "40px 30px",
+                borderRadius: "20px",
+                textAlign: "center",
+                color: "#1f2937",
+                border: "1px solid rgba(37,99,235,0.2)",
+                transition: "all 0.4s ease-in-out",
+              }}
+            >
+              <h3
+                style={{
+                  color: "#1e3a8a",
+                  fontSize: "1.8rem",
+                  fontWeight: "700",
+                  marginBottom: "20px",
+                }}
+              >
+                {card.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  lineHeight: "1.7",
+                }}
+              >
+                {card.text}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

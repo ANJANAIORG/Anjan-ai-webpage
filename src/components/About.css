@@ -1,0 +1,121 @@
+.about-section {
+  padding: 60px 0 100px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(224, 242, 254, 0.8));
+  background-size: 200% 200%;
+  z-index: 0;
+}
+
+.about-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about-left,
+.about-right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.about-subtitle {
+  font-size: clamp(20px, 3vw, 26px);
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #111827;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.about-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.about-point {
+  background-color: #ffffff;
+  padding: 16px 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.about-check {
+  font-size: 1.4rem;
+  color: #2563eb;
+}
+
+.about-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 40px 36px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.about-card-title {
+  color: #1e3a8a;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.about-card-text {
+  color: #111827;
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .about-right {
+  flex: 1;
+  min-width: 320px;
+  margin-top: 500px; /* ⬅ moves Mission & Vision card downward */
+}
+
+  .about-card {
+    padding: 20px 24px;
+  }
+}
