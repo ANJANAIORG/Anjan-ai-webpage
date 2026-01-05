@@ -1,23 +1,14 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar.tsx'
-import Hero from './components/Hero.tsx'
-import About from './components/About.tsx'
-import Products from './components/Products.tsx'
-import Contact from './components/Contact.tsx'
-import Footer from './components/Footer.tsx'
+import Home from './components/Home.tsx'
+import ProductDetail from './components/ProductDetail.tsx'
 
 function App() {
   return (
-    <div className="wrapper">
-      <Navbar />
-      <main className="grow">
-        <Hero />
-        <About />
-        <Products />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product" element={<ProductDetail />} />
+    </Routes>
   )
 }
 

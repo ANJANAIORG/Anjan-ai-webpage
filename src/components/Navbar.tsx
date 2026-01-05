@@ -24,34 +24,45 @@ function Navbar() {
       style={{
         position: 'sticky',
         top: 0,
-        zIndex: 100,
-        backdropFilter: 'blur(12px) saturate(180%)',
+        zIndex: 1000,
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
         background: scrolled
-          ? 'rgba(255, 255, 255, 0.85)'
-          : 'linear-gradient(90deg, #eef2ff 0%, #fdf4ff 100%)',
-        boxShadow: scrolled ? '0 4px 12px rgba(0,0,0,0.08)' : 'none',
-        transition: 'all 0.3s ease',
-        borderBottom: '1px solid rgba(99,102,241,0.1)',
+          ? 'rgba(255, 255, 255, 0.9)'
+          : 'rgba(255, 255, 255, 0.8)',
+        boxShadow: scrolled
+          ? '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)'
+          : 'none',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        borderBottom: '1px solid rgba(15, 23, 42, 0.08)',
       }}
     >
       <div
+        className="container"
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0 48px',
-          height: scrolled ? 64 : 70,
-          transition: 'height 0.3s ease',
+          height: scrolled ? 64 : 72,
+          transition: 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
         {/* Logo */}
-        <a href="#home" style={{ display: 'flex', alignItems: 'center' }}>
+        <a
+          href="#"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            textDecoration: 'none',
+          }}
+        >
           <img
             src={logo}
             alt="Anjan AI Logo"
             style={{
-              height: scrolled ? 60 : 60,
-              transition: 'height 0.3s ease',
+              height: scrolled ? 48 : 52,
+              width: 'auto',
+              transition: 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           />
         </a>
@@ -60,8 +71,8 @@ function Navbar() {
         <nav
           style={{
             display: 'none',
-            gap: 32,
-            fontWeight: 500,
+            alignItems: 'center',
+            gap: '0.5rem',
           }}
           className="nav-desktop"
         >
@@ -72,18 +83,17 @@ function Navbar() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 8,
+                gap: '0.5rem',
                 color: '#1e3a8a',
-                fontSize: 15, // 👈 Decreased from 17 to 15
-                fontWeight: 600,
+                fontSize: '0.9375rem',
+                fontWeight: 500,
                 textDecoration: 'none',
-                padding: '8px 14px', // slightly smaller padding
-                borderRadius: 10,
-                transition: 'all 0.3s ease',
+                padding: '0.5rem 1rem',
+                borderRadius: '0.5rem',
+                transition: 'all 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background =
-                  'linear-gradient(90deg, #dbeafe, #ede9fe)'
+                e.currentTarget.style.background = 'rgba(30, 58, 138, 0.08)'
                 e.currentTarget.style.color = '#1e40af'
               }}
               onMouseLeave={(e) => {
@@ -91,7 +101,8 @@ function Navbar() {
                 e.currentTarget.style.color = '#1e3a8a'
               }}
             >
-              {item.icon} {item.label}
+              <span style={{ fontSize: '0.875rem' }}>{item.icon}</span>
+              <span>{item.label}</span>
             </a>
           ))}
         </nav>
@@ -99,17 +110,29 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
           style={{
-            fontSize: 26,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '2.5rem',
+            height: '2.5rem',
+            fontSize: '1.5rem',
             border: 'none',
             background: 'transparent',
             color: '#1e3a8a',
             cursor: 'pointer',
-            transition: 'transform 0.3s ease',
-            transform: open ? 'rotate(90deg)' : 'none',
+            transition: 'all 0.2s ease',
+            borderRadius: '0.5rem',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(30, 58, 138, 0.08)'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'transparent'
           }}
         >
-          ☰
+          {open ? '✕' : '☰'}
         </button>
       </div>
 
@@ -118,13 +141,20 @@ function Navbar() {
         style={{
           maxHeight: open ? '400px' : '0',
           overflow: 'hidden',
-          transition: 'max-height 0.4s ease',
-          background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(10px)',
-          borderTop: '1px solid rgba(0,0,0,0.05)',
+          transition: 'max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          background: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(20px)',
+          borderTop: '1px solid rgba(15, 23, 42, 0.08)',
         }}
       >
-        <div style={{ padding: '16px 32px', display: 'grid', gap: 12 }}>
+        <div
+          className="container"
+          style={{
+            padding: '1rem 0',
+            display: 'grid',
+            gap: '0.25rem',
+          }}
+        >
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -133,23 +163,24 @@ function Navbar() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 10,
-                fontSize: 10, // 👈 Decreased from 18 to 16
+                gap: '0.75rem',
+                fontSize: '0.9375rem',
                 color: '#1e3a8a',
                 textDecoration: 'none',
-                fontWeight: 600,
-                padding: '8px 14px',
-                borderRadius: 8,
-                transition: 'all 0.3s ease',
+                fontWeight: 500,
+                padding: '0.75rem 1rem',
+                borderRadius: '0.5rem',
+                transition: 'all 0.2s ease',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = '#e0e7ff')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = 'transparent')
-              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(30, 58, 138, 0.08)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent'
+              }}
             >
-              {item.icon} {item.label}
+              <span style={{ fontSize: '1rem' }}>{item.icon}</span>
+              <span>{item.label}</span>
             </a>
           ))}
         </div>
@@ -158,7 +189,7 @@ function Navbar() {
       <style>{`
         @media (min-width: 900px) {
           .nav-desktop { display: flex !important; }
-          button { display: none !important; }
+          button[aria-label="Toggle menu"] { display: none !important; }
         }
       `}</style>
     </header>

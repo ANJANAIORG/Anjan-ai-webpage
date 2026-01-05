@@ -37,56 +37,39 @@ function About() {
   return (
     <section
       id="about"
+      className="section"
       style={{
-        padding: "80px 0",
-        background: "linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%)",
+        background: "linear-gradient(180deg, #f9fafb 0%, #f0f9ff 100%)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Background Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:0xe0f2fe,
-          backdropFilter: "blur(6px)",
-          zIndex: 0,
-        }}
-      />
-
       {/* Main Content */}
       <div
+        className="container"
         style={{
           position: "relative",
           zIndex: 1,
-          display: "flex",
-          flexDirection: "row",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "4rem",
           alignItems: "flex-start",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "60px",
-          maxWidth: "1150px",
-          margin: "0 auto",
-          padding: "0 24px",
         }}
       >
         {/* Left Side: About Text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{
-            flex: "1 1 480px",
-            textAlign: "left",
-          }}
         >
           <h2
             style={{
-              fontSize: "clamp(26px, 4vw, 38px)",
-              fontWeight: "700",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
+              fontWeight: 700,
               color: "#1e3a8a",
-              marginBottom: "12px",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
             }}
           >
             About Us
@@ -94,10 +77,13 @@ function About() {
 
           <h3
             style={{
-              fontSize: "clamp(18px, 3vw, 24px)",
+              fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
               color: "#2563eb",
-              marginBottom: "16px",
-              fontWeight: "600",
+              marginBottom: "1.5rem",
+              fontWeight: 600,
+              lineHeight: 1.3,
+              textRendering: "optimizeLegibility",
+              letterSpacing: "-0.01em",
             }}
           >
             Accelerate Your Growth With Intelligent AI Solutions
@@ -105,11 +91,10 @@ function About() {
 
           <p
             style={{
-              fontSize: "1rem",
+              fontSize: "1.0625rem",
               lineHeight: 1.7,
-              color: "#111827",
-              marginBottom: "28px",
-              maxWidth: "90%",
+              color: "#4b5563",
+              marginBottom: "2rem",
             }}
           >
             Anjan AI specializes in crafting custom AI agents and ERP+AI systems
@@ -122,12 +107,12 @@ function About() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "12px",
-              marginTop: "10px",
+              gap: "1rem",
             }}
           >
             {points.map((point, index) => (
@@ -135,30 +120,41 @@ function About() {
                 key={index}
                 variants={pointVariants}
                 whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 3px 10px rgba(37,99,235,0.12)",
+                  x: 4,
                 }}
-                transition={{ type: "spring", stiffness: 150 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 style={{
-                  color: "#111827",
-                  fontSize: "0.95rem",
-                  fontWeight: "500",
                   display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  maxWidth: "700px",
+                  alignItems: "flex-start",
+                  gap: "0.75rem",
+                  padding: "0.75rem",
+                  borderRadius: "0.5rem",
+                  background: "white",
+                  boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+                  transition: "all 0.2s ease",
                 }}
               >
                 <span
                   style={{
-                    width: "10px",
-                    height: "10px",
+                    width: "6px",
+                    height: "6px",
                     borderRadius: "50%",
                     backgroundColor: "#2563eb",
                     display: "inline-block",
+                    marginTop: "0.5rem",
+                    flexShrink: 0,
                   }}
                 />
-                {point}
+                <span
+                  style={{
+                    color: "#111827",
+                    fontSize: "0.9375rem",
+                    fontWeight: 500,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {point}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -168,51 +164,38 @@ function About() {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{
-            flex: "1 1 340px",
             display: "flex",
             flexDirection: "column",
-            gap: "24px",
-            marginTop: "16px",
+            gap: "1.5rem",
           }}
         >
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              animate={{
-                boxShadow: [
-                  "0 0 14px rgba(37,99,235,0.4)",
-                  "0 0 24px rgba(37,99,235,0.5)",
-                  "0 0 14px rgba(37,99,235,0.4)",
-                ],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
               whileHover={{
-                scale: 1.04,
-                boxShadow:
-                  "0 0 28px rgba(37,99,235,0.6), 0 0 50px rgba(37,99,235,0.3)",
+                y: -4,
               }}
+              transition={{ duration: 0.2 }}
               style={{
-                background: "transparent",
-                padding: "24px 20px",
-                borderRadius: "14px",
-                textAlign: "center",
-                color: "#1f2937",
-                border: "1px solid rgba(37,99,235,0.25)",
-                transition: "all 0.3s ease-in-out",
+                background: "white",
+                padding: "2rem",
+                borderRadius: "1rem",
+                textAlign: "left",
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                border: "1px solid rgba(15, 23, 42, 0.08)",
+                transition: "all 0.2s ease",
               }}
             >
               <h3
                 style={{
                   color: "#1e3a8a",
-                  fontSize: "1.4rem",
-                  fontWeight: "700",
-                  marginBottom: "10px",
+                  fontSize: "1.5rem",
+                  fontWeight: 700,
+                  marginBottom: "0.75rem",
+                  lineHeight: 1.2,
                 }}
               >
                 {card.title}
@@ -220,7 +203,9 @@ function About() {
               <p
                 style={{
                   fontSize: "1rem",
-                  lineHeight: 1.6,
+                  lineHeight: 1.7,
+                  color: "#4b5563",
+                  margin: 0,
                 }}
               >
                 {card.text}

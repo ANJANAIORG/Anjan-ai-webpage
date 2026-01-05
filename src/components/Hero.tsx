@@ -66,7 +66,7 @@ function Hero() {
 
       <style>{`
         .hero-section {
-          width: 100vw;
+          width: 100%;
           min-height: 100vh;
           display: flex;
           flex-direction: column;
@@ -80,8 +80,8 @@ function Hero() {
         .hero-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(255, 255, 255, 0.25);
-          backdrop-filter: blur(3px);
+          background: rgba(255, 255, 255, 0.4);
+          backdrop-filter: blur(2px);
           z-index: 0;
         }
 
@@ -90,7 +90,7 @@ function Hero() {
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
-          padding: 80px 20px;
+          padding: 5rem 1.25rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -98,44 +98,46 @@ function Hero() {
 
         .hero-content {
           text-align: center;
-          display: grid;
-          gap: 24px;
-          justify-items: center;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          align-items: center;
           position: relative;
           z-index: 2;
+          max-width: 900px;
         }
 
         .hero-content h1 {
-          font-size: clamp(42px, 5vw, 72px);
+          font-size: clamp(2.5rem, 5vw, 4.5rem);
           font-weight: 800;
           line-height: 1.1;
           margin: 0;
-          letter-spacing: -0.02em;
-          background: linear-gradient(90deg, #111827, #1e3a8a, #2563eb);
+          letter-spacing: -0.01em;
+          background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1e40af 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          background-clip: text;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
 
-        .muted {
-          color: #1e3a8a;
-          font-size: 18px;
-          max-width: 720px;
-          line-height: 1.6;
-          margin: 0 auto;
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 12px;
-          padding: 12px 16px;
-          backdrop-filter: blur(8px);
+        .hero-content .muted {
+          color: #4b5563;
+          font-size: clamp(1rem, 2vw, 1.125rem);
+          max-width: 680px;
+          line-height: 1.7;
+          margin: 0;
+          font-weight: 400;
         }
 
         @media (max-width: 768px) {
           .hero-container {
-            padding: 60px 16px;
+            padding: 4rem 1rem;
           }
 
-          .hero-content h1 {
-            font-size: 36px;
+          .hero-content {
+            gap: 1.25rem;
           }
         }
       `}</style>
