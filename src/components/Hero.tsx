@@ -108,7 +108,7 @@ function Hero() {
         }
 
         .hero-content h1 {
-          font-size: clamp(2.5rem, 5vw, 4.5rem);
+          font-size: clamp(0.5rem, 3vw, 2.5rem);
           font-weight: 800;
           line-height: 1.1;
           margin: 0;

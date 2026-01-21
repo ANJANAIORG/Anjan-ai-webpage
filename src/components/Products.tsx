@@ -298,30 +298,7 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Bottom CTA Text */}
-        <div
-          style={{
-            textAlign: "center",
-            padding: "2rem",
-            background: "white",
-            borderRadius: "1rem",
-            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
-            border: "1px solid rgba(15, 23, 42, 0.08)",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "1.125rem",
-              color: "#111827",
-              lineHeight: 1.7,
-              margin: 0,
-              fontWeight: 500,
-              textRendering: "optimizeLegibility",
-            }}
-          >
-            From dashboards to conversations to forecasts, we help organizations see clearly, act decisively, and plan confidently.
-          </p>
-        </div>
+       
       </div>
     </section>
   );
